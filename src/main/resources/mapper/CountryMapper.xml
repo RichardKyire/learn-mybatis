@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzt.mybatis.demo.mapper.CountryMapper">
+  <resultMap id="countMap" type="Country">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="countryname" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="countrycode" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Country_Column_List">
+    id, countryname, countrycode
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="countMap">
+    select 
+    <include refid="Country_Column_List" />
+    from country
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from country
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wzt.mybatis.demo.model.Country">
+    insert into country (id, countryname, countrycode
+      )
+    values (#{id,jdbcType=INTEGER}, #{countryname,jdbcType=VARCHAR}, #{countrycode,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wzt.mybatis.demo.model.Country">
+    insert into country
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="countryname != null">
+        countryname,
+      </if>
+      <if test="countrycode != null">
+        countrycode,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="countryname != null">
+        #{countryname,jdbcType=VARCHAR},
+      </if>
+      <if test="countrycode != null">
+        #{countrycode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wzt.mybatis.demo.model.Country">
+    update country
+    <set>
+      <if test="countryname != null">
+        countryname = #{countryname,jdbcType=VARCHAR},
+      </if>
+      <if test="countrycode != null">
+        countrycode = #{countrycode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wzt.mybatis.demo.model.Country">
+    update country
+    set countryname = #{countryname,jdbcType=VARCHAR},
+      countrycode = #{countrycode,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
