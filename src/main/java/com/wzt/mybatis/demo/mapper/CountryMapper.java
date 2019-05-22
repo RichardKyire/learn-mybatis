@@ -1,6 +1,7 @@
 package com.wzt.mybatis.demo.mapper;
 
 import com.wzt.mybatis.demo.model.Country;
+import org.apache.ibatis.annotations.Mapper;
 
 public interface CountryMapper {
     int deleteByPrimaryKey(Integer id);
