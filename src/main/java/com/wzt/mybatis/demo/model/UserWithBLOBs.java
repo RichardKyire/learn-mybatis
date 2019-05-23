@@ -1,5 +1,7 @@
 package com.wzt.mybatis.demo.model;
 
+import java.util.Date;
+
 public class UserWithBLOBs extends User {
     private String userInfo;
 
