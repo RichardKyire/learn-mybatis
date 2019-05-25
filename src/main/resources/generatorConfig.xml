@@ -77,7 +77,12 @@
 <!--               enableDeleteByExample="false" enableSelectByExample="false"-->
 <!--               selectByExampleQueryId="false">-->
 <!--        </table>-->
-        <table tableName="sys_role" domainObjectName="Role"
+<!--        <table tableName="sys_role" domainObjectName="Role"-->
+<!--               enableCountByExample="false" enableUpdateByExample="false"-->
+<!--               enableDeleteByExample="false" enableSelectByExample="false"-->
+<!--               selectByExampleQueryId="false">-->
+<!--        </table>-->
+        <table tableName="sys_privilege" domainObjectName="Privilege"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">

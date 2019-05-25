@@ -29,4 +29,6 @@ public interface UserMapper {
     User selectByUserName(String userName);
 
     List<User> selectUserRoleAll();
+
+    List<User> selectUserRolePrivilegeAll();
 }

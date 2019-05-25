@@ -30,4 +30,9 @@ public class UserController {
   List<User> selectUserRoles(){
     return userService.selectUserRole();
   }
+
+  @GetMapping("/allUserWithRolesAndPrivilege")
+  List<User> allUserWithRolesAndPrivilege(){
+    return userService.selectUserRolePrivilegeAll();
+  }
 }

@@ -12,4 +12,6 @@ public interface UserService {
 
     List<User> selectUserRole();
 
+    List<User> selectUserRolePrivilegeAll();
+
 }

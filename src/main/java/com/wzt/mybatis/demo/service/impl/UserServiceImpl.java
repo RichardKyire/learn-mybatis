@@ -11,20 +11,25 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Resource private UserMapper userMapper;
+  @Resource private UserMapper userMapper;
 
-    @Override
-    public List<User> selectAll() {
-        return userMapper.selectAll();
-    }
+  @Override
+  public List<User> selectAll() {
+    return userMapper.selectAll();
+  }
 
-    @Override
-    public User selectByUserName(String userName) {
-        return userMapper.selectByUserName(userName);
-    }
+  @Override
+  public User selectByUserName(String userName) {
+    return userMapper.selectByUserName(userName);
+  }
 
-    @Override
-    public List<User> selectUserRole() {
-        return userMapper.selectUserRoleAll();
-    }
+  @Override
+  public List<User> selectUserRole() {
+    return userMapper.selectUserRoleAll();
+  }
+
+  @Override
+  public List<User> selectUserRolePrivilegeAll() {
+    return userMapper.selectUserRolePrivilegeAll();
+  }
 }
