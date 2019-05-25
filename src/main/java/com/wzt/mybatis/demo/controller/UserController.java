@@ -25,4 +25,9 @@ public class UserController {
   User selectByUserName(@PathVariable(name = "userName") String userName) {
     return userService.selectByUserName(userName);
   }
+
+  @GetMapping("/allUserWithRoles")
+  List<User> selectUserRoles(){
+    return userService.selectUserRole();
+  }
 }

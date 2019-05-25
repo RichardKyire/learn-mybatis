@@ -10,4 +10,6 @@ public interface UserService {
 
     User selectByUserName(String userName);
 
+    List<User> selectUserRole();
+
 }

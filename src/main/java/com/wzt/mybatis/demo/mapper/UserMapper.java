@@ -27,4 +27,6 @@ public interface UserMapper {
 
     @SelectProvider(type= UserProvider.class,method = "selectByUserName")
     User selectByUserName(String userName);
+
+    List<User> selectUserRoleAll();
 }

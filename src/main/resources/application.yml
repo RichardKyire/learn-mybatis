@@ -24,4 +24,7 @@ mybatis:
   mapperLocations: classpath:mapper/*.xml
   typeAliasesPackage: com.wzt.mybatis.demo.model
   configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
+server:
+  port: 8081
