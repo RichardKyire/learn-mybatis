@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wzt.mybatis.demo.mapper.CountryMapper">
-  <resultMap id="countMap" type="Country">
+  <resultMap id="countMap" type="com.wzt.mybatis.demo.model.Country">
     <constructor>
       <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="countryname" javaType="java.lang.String" jdbcType="VARCHAR" />
@@ -17,7 +17,12 @@
     from country
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <select id="findAll" resultType="com.wzt.mybatis.demo.model.Country">
+        select
+        <include refid="Country_Column_List"/>
+        from country
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from country
     where id = #{id,jdbcType=INTEGER}
   </delete>

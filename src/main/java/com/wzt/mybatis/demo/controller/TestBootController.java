@@ -1,5 +1,8 @@
 package com.wzt.mybatis.demo.controller;
 
+import com.wzt.mybatis.demo.common.ApiResponse;
+import com.wzt.mybatis.demo.common.ResponseCode;
+import com.wzt.mybatis.demo.exception.BusinessException;
 import com.wzt.mybatis.demo.model.Country;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +14,6 @@ public class TestBootController {
   public Country getCountry() {
     Country country = new Country();
     country.setCountryname("China");
-    return country;
+    throw new IllegalArgumentException("参数错误");
   }
 }
